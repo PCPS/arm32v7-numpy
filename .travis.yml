@@ -12,7 +12,7 @@ jobs:
       name: "Build image and upload to Docker Hub"
       script:
         # this task takes very long to complete
-        - travis_wait 50 make docker-image
+        - travis_wait 50 make docker-image || travis_terminate 1
       after_success:
         - make docker-upload
     - stage: test
