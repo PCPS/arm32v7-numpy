@@ -16,5 +16,5 @@ docker-upload:
 	docker push $$DOCKER_USERNAME/arm32v7-numpy:latest || travis_terminate 1
 	docker tag arm32v7-numpy:latest $$DOCKER_USERNAME/arm32v7-numpy:$$NUMPY_VERSION
 	docker push $$DOCKER_USERNAME/arm32v7-numpy:$$NUMPY_VERSION
-	docker tag arm32v7-numpy:latest  $$DOCKER_USERNAME/arm32v7-numpy:$$TRAVIS_BUILD_NUMBER
-	docker push $$DOCKER_USERNAME/arm32v7-numpy:$$TRAVIS_BUILD_NUMBER
+	# docker tag arm32v7-numpy:latest  $$DOCKER_USERNAME/arm32v7-numpy:$$TRAVIS_BUILD_NUMBER
+	# docker push $$DOCKER_USERNAME/arm32v7-numpy:$$TRAVIS_BUILD_NUMBER
