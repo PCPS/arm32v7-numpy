@@ -1,0 +1,14 @@
+tests/
+.gitignore
+.coveragerc
+.coverage
+Makefile
+*.md
+tox.ini
+config/
+.idea/
+.git/
+.pytest_cache/
+**/__pycache__/
+*.pyc
+*.py[cod]
