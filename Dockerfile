@@ -8,7 +8,7 @@ COPY ./library-dependencies.txt /tmp/
 RUN buildDeps='build-essential gcc gfortran python3-dev libopenblas-dev liblapack-dev' \
         && apt-get update \
         && apt-get install -y --no-install-recommends $buildDeps  \
-        && cat library-dependencies.txt | egrep -v "^\s*(#|$)" | xargs apt-get install -y \
+        && cat /tmp/library-dependencies.txt | egrep -v "^\s*(#|$)" | xargs apt-get install -y \
         && CFLAGS="-g0 -Wl,--strip-all -I/usr/include:/usr/local/include -L/usr/lib:/usr/local/lib" \
         && pip3 install --no-cache-dir \
         --compile \
