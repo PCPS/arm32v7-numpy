@@ -17,4 +17,4 @@ jobs:
         - make docker-upload || travis_terminate 1
     - stage: test
       name: "Test Numpy"
-      script: make docker-test
+      script: travis_wait 50 make docker-test
