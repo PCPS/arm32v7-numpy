@@ -1,6 +1,8 @@
 SHELL := /bin/bash
 
 docker-test:
+	# prepare qemu
+	docker run --rm --privileged multiarch/qemu-user-static:register --reset
 	docker run --rm $$DOCKER_USERNAME/arm32v7-numpy:latest /bin/bash -c "pip install pytest; python -c \"import numpy; numpy.test('full');\""
 
 docker-image:
