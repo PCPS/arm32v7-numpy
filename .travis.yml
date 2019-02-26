@@ -17,4 +17,4 @@ jobs:
         - make docker-upload
     - stage: test
       name: "Test Numpy"
-      script: docker run --rm logbook2cloud /bin/bash -c "pip install pytest; python -c \"import numpy; numpy.test('full');\""
+      script: make docker-test
